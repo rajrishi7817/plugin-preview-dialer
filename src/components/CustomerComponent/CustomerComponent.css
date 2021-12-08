@@ -1,0 +1,13 @@
+.customer-component{
+    background-color: #a2a0a1;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.customer-component-row2{
+    display: flex;
+}
+
+.customer-component-row3{
+    display: flex;
+}

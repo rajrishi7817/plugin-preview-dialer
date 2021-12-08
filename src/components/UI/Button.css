@@ -1,0 +1,46 @@
+.button {
+  font: inherit;
+  border-radius: 5px;
+  border: 1px solid #8d9aa5;
+  background: #8d9aa5;
+  color: white;
+  font-family: Noto Sans JP;
+  font-size: 12px;
+  cursor: pointer;
+  margin: 5px 0 5px 0;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.button-default:hover,
+.button-default:active {
+  background: #747285;
+  border-color: #747285;
+}
+
+.button--default {
+  background: #396b9a;
+  color: white;
+  border: 1px solid #396b9a;
+}
+
+.button--default:hover,
+.button--default:active {
+  background: #69a3da;
+  border-color: #69a3da;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button--accept {
+  background: #289f9b;
+  color: #ffffff;
+  border: 1px solid #289f9b;
+}
+
+.button--reject {
+  background: #ff0055;
+  border-color: #ff0055;
+}

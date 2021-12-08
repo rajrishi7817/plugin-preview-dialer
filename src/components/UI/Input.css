@@ -1,0 +1,85 @@
+.form-control {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start
+}
+
+.customer-form {
+  width: 300px;
+  margin: 5px 10px;
+}
+
+.form-control label {
+  font-family: Noto Sans JP;
+  font-size: 12px;
+  font-weight: normal;
+  color: #9f9d9c;
+  margin-bottom: 0 !important;
+  margin-top: 7px !important;
+}
+
+.form-control input,
+.form-control textarea {
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background: #f8f8f8;
+  padding: 0.15rem 0.25rem;
+  font-family: Noto Sans JP;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.customer-form-distinct textarea{
+  border-color: #396b9a;
+}
+
+.form-control input:focus,
+.form-control textarea:focus {
+  outline: none;
+  background: #ebebeb;
+  border-color: #00485e;
+  font-family: Noto Sans JP;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.form-control--invalid p {
+  color: #ff0055;
+  font-family: Noto Sans JP;
+  font-size: 9px;
+  font-weight: bold;
+}
+
+.form-control--invalid input,
+.form-control--invalid textarea {
+  border-color: #ff0055;
+  border-radius: 3px;
+}
+
+.form-control--disabled label {
+  font-family: Noto Sans JP;
+  font-size: 12px;
+  font-weight: normal;
+  color: #9f9d9c;
+}
+
+.form-control--disabled input,
+.form-control--disabled textarea {
+  border: none;
+  background-color: transparent;
+}
+
+.form-control--highlight label {
+  color: #00485e;
+  font-family: Noto Sans JP;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.form-control--highlight input,
+.form-control--highlight textarea {
+  border-color: #00485e;
+  border-radius: 3px;
+}
+

@@ -1,0 +1,66 @@
+.form-control {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start
+}
+
+.translate-form {
+  width: 30%;
+}
+
+.disposition-form {
+  margin: 10px 0 0 10%;
+}
+
+.form-control label {
+  font-family: Noto Sans JP;
+  font-size: 12px;
+  font-weight: normal;
+  color: #9f9d9c;
+  margin-bottom: 5px;
+}
+
+.form-control select {
+  width: 83%;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background: #f8f8f8;
+  padding: 0.15rem 0.25rem;
+  font-family: Noto Sans JP;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.form-control select:focus {
+  outline: none;
+  background: #ebebeb;
+  border-color: #00485e;
+  font-family: Noto Sans JP;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.form-control--invalid p {
+  color: #ff0055;
+  font-family: Noto Sans JP;
+  font-size: 9px;
+  font-weight: bold;
+}
+
+.form-control--invalid select {
+  border-color: #ff0055;
+  border-radius: 3px;
+}
+
+
+.form-control--highlight label {
+  color: #00485e;
+  font-family: Noto Sans JP;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.form-control--highlight select {
+  border-color: #00485e;
+  border-radius: 3px;
+}

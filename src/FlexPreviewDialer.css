@@ -1,0 +1,17 @@
+.accept-button{
+    display:flex;
+    align-items: center;
+}
+
+.accept-button_Icon{
+    padding: 0 0.5rem 0 0;
+}
+
+.reject-button{
+    display:flex;
+    align-items: center;
+}
+
+.reject-button_Icon{
+    padding: 0 0.5rem 0 0;
+}
