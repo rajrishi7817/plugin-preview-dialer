@@ -1,0 +1,13 @@
+.reject-container{
+    display: flex;
+}
+
+.reject-button{
+    display:flex;
+    align-items: center;
+    width: 4.5rem;
+}
+
+.reject-button_Icon{
+    padding: 0 0.25rem 0 0;
+}

@@ -7,7 +7,7 @@
   font-family: Noto Sans JP;
   font-size: 12px;
   cursor: pointer;
-  margin: 5px 0 5px 0;
+  margin: 4px 0 9px 0;
   text-decoration: none;
   display: inline-block;
 }
@@ -35,12 +35,12 @@
 }
 
 .button--accept {
-  background: #289f9b;
+  background: #097c78;
   color: #ffffff;
-  border: 1px solid #289f9b;
+  border: 1px solid #097c78;
 }
 
 .button--reject {
-  background: #ff0055;
-  border-color: #ff0055;
+  background: #dc2c2c;
+  border-color: #dc2c2c;
 }

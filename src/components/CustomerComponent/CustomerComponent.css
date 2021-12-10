@@ -1,7 +1,8 @@
 .customer-component{
-    background-color: #a2a0a1;
+    background-color: #ecedf1;
     height: 100%;
     overflow-y: hidden;
+    border-left: 1px #cfd7df solid;
 }
 
 .customer-component-row2{

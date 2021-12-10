@@ -11,7 +11,7 @@ const ShowCustomerData = (props) => {
                         <div>Name</div>
                     </div>
                     <div className='data-value'>
-                        <div><b>:</b>&nbsp;{props.customerInfo.name}</div>
+                        <div>{props.customerInfo.name}</div>
                     </div>
                 </div>
                 <div className='show-customer-data-record'>
@@ -19,7 +19,7 @@ const ShowCustomerData = (props) => {
                         <div>Date Of Birth</div>
                     </div>
                     <div className='data-value'>
-                        <div><b>:</b>&nbsp;{props.customerInfo.dob}</div>
+                        <div>{props.customerInfo.dob}</div>
                     </div>
                 </div>
                 <div className='show-customer-data-record'>
@@ -27,7 +27,7 @@ const ShowCustomerData = (props) => {
                         <div>Address</div>
                     </div>
                     <div className='data-value'>
-                        <div><b>:</b>&nbsp;{props.customerInfo.addr}</div>
+                        <div>{props.customerInfo.addr}</div>
                     </div>
                 </div>
                 <div className='show-customer-data-record'>
@@ -35,7 +35,7 @@ const ShowCustomerData = (props) => {
                         <div>State</div>
                     </div>
                     <div className='data-value'>
-                        <div><b>:</b>&nbsp;{props.customerInfo.addr_State}</div>
+                        <div>{props.customerInfo.addr_State}</div>
                     </div>
                 </div>
                 <div className='show-customer-data-record'>
@@ -43,7 +43,7 @@ const ShowCustomerData = (props) => {
                         <div>ZipCode</div>
                     </div>
                     <div className='data-value'>
-                        <div><b>:</b>&nbsp;{props.customerInfo.addr_ZipCode}</div>
+                        <div>{props.customerInfo.addr_ZipCode}</div>
                     </div>
                 </div>
                 <div className='show-customer-data-record'>
@@ -51,7 +51,7 @@ const ShowCustomerData = (props) => {
                         <div>Email</div>
                     </div>
                     <div className='data-value'>
-                        <div><b>:</b>&nbsp;{props.customerInfo.email}</div>
+                        <div>{props.customerInfo.email}</div>
                     </div>
                 </div>
                 <div className='show-customer-data-record'>
@@ -59,7 +59,7 @@ const ShowCustomerData = (props) => {
                         <div>Client Name</div>
                     </div>
                     <div className='data-value'>
-                        <div><b>:</b>&nbsp;{props.customerInfo.client_NM}</div>
+                        <div>{props.customerInfo.client_NM}</div>
                     </div>
                 </div>
                 <div className='show-customer-data-record'>
@@ -67,7 +67,7 @@ const ShowCustomerData = (props) => {
                         <div>Guarantor Name</div>
                     </div>
                     <div className='data-value'>
-                        <div><b>:</b>&nbsp;{props.customerInfo.guarantor_Name}</div>
+                        <div>{props.customerInfo.guarantor_Name}</div>
                     </div>
                 </div>
                 <div className='show-customer-data-record'>
@@ -75,7 +75,7 @@ const ShowCustomerData = (props) => {
                         <div>Current Display</div>
                     </div>
                     <div className='data-value'>
-                        <div><b>:</b>&nbsp;{props.customerInfo.curr_DISP}</div>
+                        <div>{props.customerInfo.curr_DISP}</div>
                     </div>
                 </div>
                 <div className='show-customer-data-record'>
@@ -83,7 +83,7 @@ const ShowCustomerData = (props) => {
                         <div>Hospital Code</div>
                     </div>
                     <div className='data-value'>
-                        <div><b>:</b>&nbsp;{props.customerInfo.HOSP_SVC_CD}</div>
+                        <div>{props.customerInfo.HOSP_SVC_CD}</div>
                     </div>
                 </div>
                 <div className='show-customer-data-record'>
@@ -91,7 +91,7 @@ const ShowCustomerData = (props) => {
                         <div>RTE Balance</div>
                     </div>
                     <div className='data-value'>
-                        <div><b>:</b>&nbsp;{props.customerInfo.RTE_BAL}</div>
+                        <div>{props.customerInfo.RTE_BAL}</div>
                     </div>
                 </div>
                 <div className='show-customer-data-record'>
@@ -99,7 +99,7 @@ const ShowCustomerData = (props) => {
                         <div>CBR Score</div>
                     </div>
                     <div className='data-value'>
-                        <div><b>:</b>&nbsp;{props.customerInfo.CBR_SCORE}</div>
+                        <div>{props.customerInfo.CBR_SCORE}</div>
                     </div>
                 </div>
             </div >

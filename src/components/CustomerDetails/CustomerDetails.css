@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
 
 .cd-container{
-    height: 675px;
-    background-color: #ecedf1;
-    margin: 10px 10px 0 10px;
-    flex-direction: column;
-    text-align: center;
+    background: linear-gradient(
+        90deg, #fff8fa 35%, #002060 35%);
+            margin: 5rem;
+            text-align: center;
+            padding: 2rem;
 }
 
 .cd-container h6{
     font-weight: bold;
-    font-family: Roboto;
-    color: #00485e;
+    font-family: Noto San JP;
+    color: #ffffff;
     font-size: 1.2rem;
     padding: 2px 0 0 0;
 }
