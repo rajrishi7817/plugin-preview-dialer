@@ -3,8 +3,9 @@ import { FlexPlugin } from "flex-plugin";
 import CustomerComponent from "./components/CustomerComponent/CustomerComponent";
 import CustomThemeOverrides from './CustomThemeOverrides';
 import { Icon } from '@twilio/flex-ui';
-import AcceptButton from "./components/UI/AcceptButton";
-import RejectButton from "./components/UI/RejectButton";
+
+import PreviewButton from './components/UI/PreviewButton'
+import TaskCanvasComponent from './components/TaskCanvasComponent/TaskCanvasComponent'
 import AgentComponent from "./components/AgentComponent/AgentComponent"
 
 const PLUGIN_NAME = "FlexPreviewDialer";
@@ -70,12 +71,15 @@ export default class FlexPreviewDialer extends FlexPlugin {
     PreviewDialerChannel.addedComponents = [
       {
         target: "TaskListButtons",
-        component: <AcceptButton key="accept-component" flex={flex} />
-      },
+        component: <PreviewButton key="preview-component" flex={flex} />
+      }
+    ];
+
+    PreviewDialerChannel.replacedComponents = [
       {
-        target: "TaskListButtons",
-        component: <RejectButton key="reject-component" flex={flex} />
-      },
+        target: "TaskCanvas",
+        component: <TaskCanvasComponent key="task-canvas-component" flex={flex} />
+      }
     ];
 
     PreviewDialerChannel.removedComponents = [
@@ -108,6 +112,33 @@ export default class FlexPreviewDialer extends FlexPlugin {
 
     });
 
+    flex.Actions.addListener("afterRejectTask", (payload, abortFunction) => {
+      console.log(`Task Rejected =====> ${payload.task.taskSid}`);
+
+
+
+      const deleteTaskPayload = {
+        taskSid: payload.task.taskSid
+      }
+
+      async function deleteTask() {
+
+        const responseDB = await fetch('https://flex-preview-dialer-9666-dev.twil.io/deleteTask', {
+          method: 'POST',
+          body: new URLSearchParams(deleteTaskPayload),
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+            'Access-Control-Allow-Origin': '*'
+          }
+        });
+
+      }
+      deleteTask();
+
+
+
+    });
+
 
     manager.workerClient.on("reservationCreated", reservation => {
       console.log(`Accept Task Payload[Channel Name] =======> ${reservation.task.taskChannelUniqueName}`);
@@ -115,6 +146,7 @@ export default class FlexPreviewDialer extends FlexPlugin {
 
         console.log(`Accept Task Payload[Campaign Name] =======> ${reservation.task.attributes.info.campaignName}`);
 
+        console.log(`Accept Task Payload[uniqueID] =======> ${reservation.task.attributes.info.uniqueID}`);
         console.log(`Accept Task Payload[Name] =======> ${reservation.task.attributes.info.name}`);
         console.log(`Accept Task Payload[Date Of Birth] =======> ${reservation.task.attributes.info.dob}`);
         console.log(`Accept Task Payload[Address] =======> ${reservation.task.attributes.info.addr}`);
@@ -131,6 +163,7 @@ export default class FlexPreviewDialer extends FlexPlugin {
         console.log(`Accept Task Payload[CBR Score] =======> ${reservation.task.attributes.info.CBR_SCORE}`);
 
         const customerInfo = {
+          uniqueID: reservation.task.attributes.info.uniqueID,
           name: reservation.task.attributes.info.name,
           dob: reservation.task.attributes.info.dob,
           addr: reservation.task.attributes.info.addr,
@@ -150,9 +183,20 @@ export default class FlexPreviewDialer extends FlexPlugin {
           <CustomerComponent customerInfo={customerInfo} key="customer-component" />, {
           sortOrder: -1
         });
+
       }
 
       reservation.on('completed', acceptedReservation => {
+        console.log(`Task Completed ======>`);
+        flex.AgentDesktopView.Panel2.Content.replace(
+          <AgentComponent
+            key="agent-component" />, {
+          sortOrder: -1
+        });
+      });
+
+      reservation.on('canceled', acceptedReservation => {
+        console.log(`Task Canceled ======>`);
         flex.AgentDesktopView.Panel2.Content.replace(
           <AgentComponent
             key="agent-component" />, {
