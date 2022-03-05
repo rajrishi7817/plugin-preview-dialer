@@ -1,17 +1,16 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP");
 
-.cd-container{
-    background: linear-gradient(
-        90deg, #fff8fa 35%, #002060 35%);
-            margin: 5rem;
-            text-align: center;
-            padding: 2rem;
+.cd-container {
+  background: linear-gradient(90deg, #ccd3d9 35%, #0a4d77 35%);
+  margin: 5rem;
+  text-align: center;
+  padding: 2rem 2rem 4rem 2rem;
 }
 
-.cd-container h6{
-    font-weight: bold;
-    font-family: Noto San JP;
-    color: #ffffff;
-    font-size: 1.2rem;
-    padding: 2px 0 0 0;
+.cd-container h6 {
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+  color: #ccd3d9;
+  font-size: 1.8rem;
+  padding: 2px 0 0 0;
 }

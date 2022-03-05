@@ -9,25 +9,25 @@ const AcceptButton = (props) => {
     return <div className="accept-container">
         <Button key="accept-task" type="button" category="accept" onClick={() => {
 
-            console.log(`UniqueID ======> ${props.task.attributes.info.uniqueID}`);
-            const updateDBPayload = {
-                uniqueId: props.task.attributes.info.uniqueID,
-                dialStatus: `Dialed`,
-            }
+            console.log(`UniqueID ======> ${props.task.attributes.uniqueID}`);
+            // const updateDBPayload = {
+            //     uniqueId: props.task.attributes.uniqueID,
+            //     dialStatus: `Dialed`,
+            // }
 
-            async function postSnooze() {
+            // async function postSnooze() {
 
-                const responseDB = await fetch('https://flex-preview-dialer-9666-dev.twil.io/update-dialing-status', {
-                    method: 'POST',
-                    body: new URLSearchParams(updateDBPayload),
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
-                        'Access-Control-Allow-Origin': '*'
-                    }
-                });
+            //     const responseDB = await fetch('https://flex-preview-dialer-9666-dev.twil.io/update-dialing-status', {
+            //         method: 'POST',
+            //         body: new URLSearchParams(updateDBPayload),
+            //         headers: {
+            //             'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+            //             'Access-Control-Allow-Origin': '*'
+            //         }
+            //     });
 
-            }
-            postSnooze();
+            // }
+            // postSnooze();
 
             props.flex.Actions.invokeAction("AcceptTask", {
                 sid: props.task.sid

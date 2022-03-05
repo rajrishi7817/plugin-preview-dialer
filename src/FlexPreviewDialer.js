@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlexPlugin } from "flex-plugin";
+import { FlexPlugin } from '@twilio/flex-plugin';
 import CustomerComponent from "./components/CustomerComponent/CustomerComponent";
 import CustomThemeOverrides from './CustomThemeOverrides';
 import { Icon } from '@twilio/flex-ui';
@@ -42,8 +42,8 @@ export default class FlexPreviewDialer extends FlexPlugin {
       sortOrder: -1
     });
 
-    flex.MainHeader.defaultProps.logoUrl = "https://carmine-catfish-1598.twil.io/assets/VA.png";
-    flex.LoginView.defaultProps.logoUrl = "https://carmine-catfish-1598.twil.io/assets/VA.png";
+    flex.MainHeader.defaultProps.logoUrl = `https://preview-dialer-1033.twil.io/racing-unicorn.svg`;
+    flex.LoginView.defaultProps.logoUrl = "https://preview-dialer-1033.twil.io/racing-unicorn.svg";
 
     flex.AgentDesktopView.defaultProps.splitterOptions = {
       initialFirstPanelSize: '30%',
@@ -53,16 +53,16 @@ export default class FlexPreviewDialer extends FlexPlugin {
 
     // flex.OutboundDialerPanel.Content.add(<PreviewDialer key="preview-dialpad" flex={flex} manager={manager} />)
 
-    const PreviewDialerChannel = flex.DefaultTaskChannels.createChatTaskChannel(
+    const PreviewDialerChannel = flex.DefaultTaskChannels.createCallTaskChannel(
       'Preview Dialer',
       task => task.taskChannelUniqueName === 'previewdialer'
     );
 
 
-    PreviewDialerChannel.templates.TaskListItem.firstLine = task => task.attributes.info.name;
-    PreviewDialerChannel.templates.TaskCanvasHeader.title = task => task.attributes.info.name;
-    PreviewDialerChannel.templates.IncomingTaskCanvas.firstLine = task => task.attributes.info.name;
-    PreviewDialerChannel.templates.IncomingTaskCanvas.secondLine = task => task.attributes.info.campaignName;
+    PreviewDialerChannel.templates.TaskListItem.firstLine = task => task.attributes.name;
+    PreviewDialerChannel.templates.TaskCanvasHeader.title = task => task.attributes.name;
+    PreviewDialerChannel.templates.IncomingTaskCanvas.firstLine = task => task.attributes.name;
+    PreviewDialerChannel.templates.IncomingTaskCanvas.secondLine = task => task.attributes.campaignName;
 
     PreviewDialerChannel.icons.active = <Icon icon="Directory" key="icon-active" />;
     PreviewDialerChannel.icons.list = <Icon icon="Directory" key="icon-list" />;
@@ -115,28 +115,23 @@ export default class FlexPreviewDialer extends FlexPlugin {
     flex.Actions.addListener("afterRejectTask", (payload, abortFunction) => {
       console.log(`Task Rejected =====> ${payload.task.taskSid}`);
 
+      // const deleteTaskPayload = {
+      //   taskSid: payload.task.taskSid
+      // }
 
+      // async function deleteTask() {
 
-      const deleteTaskPayload = {
-        taskSid: payload.task.taskSid
-      }
+      //   const responseDB = await fetch('https://flex-preview-dialer-9666-dev.twil.io/deleteTask', {
+      //     method: 'POST',
+      //     body: new URLSearchParams(deleteTaskPayload),
+      //     headers: {
+      //       'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+      //       'Access-Control-Allow-Origin': '*'
+      //     }
+      //   });
 
-      async function deleteTask() {
-
-        const responseDB = await fetch('https://flex-preview-dialer-9666-dev.twil.io/deleteTask', {
-          method: 'POST',
-          body: new URLSearchParams(deleteTaskPayload),
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
-            'Access-Control-Allow-Origin': '*'
-          }
-        });
-
-      }
-      deleteTask();
-
-
-
+      // }
+      // deleteTask();
     });
 
 
@@ -144,39 +139,26 @@ export default class FlexPreviewDialer extends FlexPlugin {
       console.log(`Accept Task Payload[Channel Name] =======> ${reservation.task.taskChannelUniqueName}`);
       if (reservation.task.taskChannelUniqueName === 'previewdialer') {
 
-        console.log(`Accept Task Payload[Campaign Name] =======> ${reservation.task.attributes.info.campaignName}`);
+        console.log(`Accept Task Payload[Campaign Name] =======> ${reservation.task.attributes.campaignName}`);
 
-        console.log(`Accept Task Payload[uniqueID] =======> ${reservation.task.attributes.info.uniqueID}`);
-        console.log(`Accept Task Payload[Name] =======> ${reservation.task.attributes.info.name}`);
-        console.log(`Accept Task Payload[Date Of Birth] =======> ${reservation.task.attributes.info.dob}`);
-        console.log(`Accept Task Payload[Address] =======> ${reservation.task.attributes.info.addr}`);
-        console.log(`Accept Task Payload[State] =======> ${reservation.task.attributes.info.addr_State}`);
-        console.log(`Accept Task Payload[ZipCode] =======> ${reservation.task.attributes.info.addr_ZipCode}`);
-        console.log(`Accept Task Payload[Email] =======> ${reservation.task.attributes.info.email}`);
-
-        console.log(`Accept Task Payload[Client Name] =======> ${reservation.task.attributes.info.client_NM}`);
-        console.log(`Accept Task Payload[FACS Client Name] =======> ${reservation.task.attributes.info.facs_client_NM}`);
-        console.log(`Accept Task Payload[Guarantor Name] =======> ${reservation.task.attributes.info.guarantor_Name}`);
-        console.log(`Accept Task Payload[Current Display] =======> ${reservation.task.attributes.info.curr_DISP}`);
-        console.log(`Accept Task Payload[Hospital Code] =======> ${reservation.task.attributes.info.HOSP_SVC_CD}`);
-        console.log(`Accept Task Payload[RTE Balance] =======> ${reservation.task.attributes.info.RTE_BAL}`);
-        console.log(`Accept Task Payload[CBR Score] =======> ${reservation.task.attributes.info.CBR_SCORE}`);
+        console.log(`Accept Task Payload[uniqueID] =======> ${reservation.task.attributes.uniqueID}`);
+        console.log(`Accept Task Payload[Name] =======> ${reservation.task.attributes.name}`);
+        console.log(`Accept Task Payload[Date Of Birth] =======> ${reservation.task.attributes.dob}`);
+        console.log(`Accept Task Payload[Address] =======> ${reservation.task.attributes.addr}`);
+        console.log(`Accept Task Payload[Address] =======> ${reservation.task.attributes.addr_City}`);
+        console.log(`Accept Task Payload[State] =======> ${reservation.task.attributes.addr_State}`);
+        console.log(`Accept Task Payload[ZipCode] =======> ${reservation.task.attributes.addr_ZipCode}`);
+        console.log(`Accept Task Payload[Email] =======> ${reservation.task.attributes.email}`);
 
         const customerInfo = {
-          uniqueID: reservation.task.attributes.info.uniqueID,
-          name: reservation.task.attributes.info.name,
-          dob: reservation.task.attributes.info.dob,
-          addr: reservation.task.attributes.info.addr,
-          addr_State: reservation.task.attributes.info.addr_State,
-          addr_ZipCode: reservation.task.attributes.info.addr_ZipCode,
-          email: reservation.task.attributes.info.email,
-          client_NM: reservation.task.attributes.info.client_NM,
-          facs_client_NM: reservation.task.attributes.info.facs_client_NM,
-          guarantor_Name: reservation.task.attributes.info.guarantor_Name,
-          curr_DISP: reservation.task.attributes.info.curr_DISP,
-          HOSP_SVC_CD: reservation.task.attributes.info.HOSP_SVC_CD,
-          RTE_BAL: reservation.task.attributes.info.RTE_BAL,
-          CBR_SCORE: reservation.task.attributes.info.CBR_SCORE
+          uniqueID: reservation.task.attributes.uniqueID,
+          name: reservation.task.attributes.name,
+          dob: reservation.task.attributes.dob,
+          addr: reservation.task.attributes.addr,
+          addr_City: reservation.task.attributes.addr_City,
+          addr_State: reservation.task.attributes.addr_State,
+          addr_ZipCode: reservation.task.attributes.addr_ZipCode,
+          email: reservation.task.attributes.email,
         }
 
         flex.AgentDesktopView.Panel2.Content.replace(

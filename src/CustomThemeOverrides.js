@@ -1,28 +1,23 @@
-const voiceraBlue = "#05164d";
-const voiceraYellow = "#ffcc00";
-const white = "#000000";
-const lightGrey = "#ccd3d9";
-
 export default {
     MainHeader: {
         Container: {
-            background: lightGrey,
-            color: voiceraBlue
+            background: "#0a4d77",
+            color: "#ffffff"
         },
         Button: {
-            color: voiceraBlue,
+            color: "#ffffff",
             lightHover: false
         }
     },
     SideNav: {
         Container: {
-            background: voiceraBlue
+            background: "#ccd3d9"
         },
         Button: {
-            background: voiceraBlue
+            background: "#ccd3d9"
         },
         Icon: {
-            color: voiceraYellow
+            color: "#0a4d77"
         }
     }
 

@@ -4,8 +4,8 @@ import "./AgentComponent.css";
 
 const AgentComponent = (props) => {
     return <div className="agent-component">
-        <h1>Voicera Preview Dialer</h1>
-        <img src="https://flex-preview-dialer-9666-dev.twil.io/pv-img.svg" alt="preview-dialer" />
+        <h1>Unicorn Preview Dialer</h1>
+        <img src="https://preview-dialer-1033.twil.io/racing-unicorn.svg" alt="preview-dialer" />
     </div>
 }
 

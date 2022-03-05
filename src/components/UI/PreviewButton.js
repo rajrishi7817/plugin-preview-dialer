@@ -8,7 +8,7 @@ import "./PreviewButton.css";
 const PreviewButton = (props) => {
     return <div className="preview-container">
         <Button key="preview-task" type="button" category="preview" onClick={() => {
-            console.log(`UniqueID ======> ${props.task.attributes.info.uniqueID}`);
+            console.log(`UniqueID ======> ${props.task.attributes.uniqueID}`);
         }}>
             <div className="reject-button">
                 <Icon className="preview-button_Icon" icon="Eye" key="Eye" />Preview

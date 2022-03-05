@@ -12,7 +12,8 @@
     "react-csv-reader": "^3.3.1",
     "react-dom": "16.5.2",
     "react-input-mask": "^2.0.4",
-    "flex-plugin-scripts": "4.2.2"
+    "@twilio/flex-plugin-scripts": "5.0.4",
+    "react-emotion": "9.2.12"
   },
   "devDependencies": {
     "@twilio/flex-ui": "^1",

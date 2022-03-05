@@ -16,13 +16,4 @@ class CustomerDetails extends Component {
     }
 }
 
-// const CustomerDetails = (props) => {
-//     return (
-//         <Card className='cd-container'>
-//             <h6>Customer Info</h6>
-//             <ShowCustomerData customerInfo={props.customerInfo} />
-//         </Card>
-//     );
-// }
-
 export default CustomerDetails;

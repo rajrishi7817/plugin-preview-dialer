@@ -12,12 +12,4 @@ class CustomerComponent extends React.Component {
     }
 }
 
-// const CustomerComponent = (props) => {
-//     return <div className='customer-component' key='customer-component' >
-//         <div className='customer-component-segment'>
-//             <CustomerDetails customerInfo={this.props.customerInfo} key='customer-details' />
-//         </div>
-//     </div>
-// }
-
 export default CustomerComponent;
